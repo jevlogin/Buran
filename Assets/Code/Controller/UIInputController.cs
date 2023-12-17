@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.EnhancedTouch;
 
 
 namespace WORLDGAMEDEVELOPMENT
@@ -41,15 +39,45 @@ namespace WORLDGAMEDEVELOPMENT
 
         public void Initialization()
         {
-            
+            _inputTouch.OnInputTouch += OnTouch;
+            _inputTouch.OnInputUnTouch += OnUnTouch;
+            _inputTouch.OnChangeTouchPositionStarted += OnChangeTouchPositionStarted;
+            _inputTouch.OnChangeTouchPositionUpdate += OnChangeTouchPositionUpdate;
         }
 
-       
-      
+        private void OnChangeTouchPositionUpdate(Vector2 position)
+        {
+            Debug.Log($"Позиция джойстика при Update - {position}");
+            Joystick.gameObject.transform.position = ClampPosition(position);
+        }
+
+        private void OnChangeTouchPositionStarted(Vector2 position)
+        {
+            Debug.Log($"Позиция джойстика при старте - {position}");
+            Joystick.gameObject.transform.position = ClampPosition(position);
+        }
+
+        private void OnUnTouch(bool value)
+        {
+            Debug.Log($"Выключаем джойстик.");
+            if (Joystick != null)
+            {
+                Joystick.gameObject.SetActive(value); 
+            }
+        }
+
+        private void OnTouch(bool value)
+        {
+            Debug.Log($"Включаем джойстик.");
+            Joystick.gameObject.SetActive(value);
+        }
 
         public void Cleanup()
         {
-           
+            _inputTouch.OnInputTouch -= OnTouch;
+            _inputTouch.OnInputUnTouch -= OnUnTouch;
+            _inputTouch.OnChangeTouchPositionStarted -= OnChangeTouchPositionStarted;
+            _inputTouch.OnChangeTouchPositionUpdate -= OnChangeTouchPositionUpdate;
         }
 
         private Vector2 ClampPosition(Vector2 screenPosition)

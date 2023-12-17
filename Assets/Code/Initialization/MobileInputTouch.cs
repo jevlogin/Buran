@@ -18,8 +18,6 @@ namespace WORLDGAMEDEVELOPMENT
         public event Action<bool> OnInputTouch;
         public event Action<bool> OnInputUnTouch;
 
-        internal InputAction TouchAction => _onTouch;
-        internal InputAction TouchActionPosition => _primaryPosition;
         public MobileInputTouch(InputAction primaryContact, InputAction primaryPosition, Camera camera)
         {
             _camera = camera;
@@ -53,14 +51,14 @@ namespace WORLDGAMEDEVELOPMENT
         private void OnTouchStartCancel(InputAction.CallbackContext context)
         {
             Debug.Log($"Отпустили кнопку");
+            OnInputUnTouch?.Invoke(false);
         }
-
-        
 
         private void OnTouchStart(InputAction.CallbackContext context)
         {
             _isSendingPosition = false;
             Debug.Log($"Нажали на кнопку");
+            OnInputTouch?.Invoke(true);
         }
 
         public void Cleanup()
