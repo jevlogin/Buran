@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c67528744c16d74b9edcfbbc6e64962, type: 3}
+  m_Name: CameraData
+  m_EditorClassIdentifier: 
+  _cameraStruct:
+    VirtualCameras: []
+    DefaultBlendTime: 3
+  _cameraSettings:
+    cameraView: {fileID: 5258710475454645576, guid: 83e0112e785af764987543f7b02c6130, type: 3}
+    _virtualCameraDefaulth: {fileID: 4290958466736157209, guid: 9cae137d7e329ff47b5d099c3ed57242, type: 3}
+    _virtualCameraIntro: {fileID: 4290958466736157209, guid: cdaef6ce604579347b01c851ac55619b, type: 3}
+    _virtualCameraDeath: {fileID: 4290958466736157209, guid: 5cee35df2fbaf6d4fa1d5bf341c21fba, type: 3}
+    _virtualCameraDamage: {fileID: 4290958466736157209, guid: c58e810e2fbe5394491ec07bb5e287a8, type: 3}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a092d3b4d2d12ca439b9bdbc9d465432, type: 3}
+  m_Name: BackgroundData
+  m_EditorClassIdentifier: 
+  _settings:
+    backgroundScrollSpeed: 0.1
+    parallaxScrollSpeed: 0.2
+    _backgroundObjects:
+    - SpaceLayerType: 4
+      SpaceObject: {fileID: 277247938624837722, guid: 7bad196639c153048b5fa262c9bcfa32, type: 3}
+    - SpaceLayerType: 1
+      SpaceObject: {fileID: 4374089569683523524, guid: 0ad9755e22748594cbadaca02d82cd2d, type: 3}
+    - SpaceLayerType: 1
+      SpaceObject: {fileID: 5635544845933784638, guid: 5bb26f5386e0a5446b710c6c0d27619d, type: 3}
+    - SpaceLayerType: 1
+      SpaceObject: {fileID: 8012323219867591048, guid: 233f7c8a569d6bf4396f8dadb02d9545, type: 3}
